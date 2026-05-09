@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import django
+import os
 from django.utils.encoding import force_str
 django.utils.encoding.force_text = force_str
 from pathlib import Path
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-9i_b=p+yz$&91rs#9u_c*+*%11vu#se3dmf%0@&-tr30ni!0(u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -62,8 +63,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
+    "whitnoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.common.CommonMiddleware",
 ]
+
+CORS_ALLOW_ALL_ORIGINS=True
+
+STATIC_URL = '/static/'
+STATIC_ROOT = r'C:\Users\ELCOT\Downloads\Major-Project-1-20250530T092904Z-1-001\Major-Project-1\backend\ecommerce\project\staticfiles'
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'project.urls'
 
@@ -126,6 +134,7 @@ SIMPLE_JWT = {
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
+STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
