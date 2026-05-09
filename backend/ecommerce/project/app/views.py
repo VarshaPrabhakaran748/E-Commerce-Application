@@ -13,7 +13,7 @@ from django.contrib.auth.hashers import make_password
 # for email purpose and cerifying the email
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode,urlsafe_base64_encode
-from django.utils.encoding import force_bytes,force_text,DjangoUnicodeDecodeError
+from django.utils.encoding import force_bytes,force_str as force_text,DjangoUnicodeDecodeError
 from django.core.mail import EmailMessage
 from django.conf import settings
 from django.views.generic import View
