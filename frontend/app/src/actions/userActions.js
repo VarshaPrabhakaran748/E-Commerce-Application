@@ -34,7 +34,7 @@ import {
   USER_UPDATE_PROFILE_RESET,
   
 } from "../constants/userConstants";
-import axios from "axios";
+import axios from "../axios";
 
 export const signup = (fname, lname, email, password) => async (dispatch) => {
   try {
