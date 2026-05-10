@@ -7,7 +7,7 @@ import { useNavigate,useParams } from "react-router-dom";
 import FormContainer from '../FormContainer'
 import Loader from '../Loader'
 import Message from '../Message'
-import axios from 'axios';
+import axios from '../axios';
 
 function ProductEditScreen({params}) {
     const { id } = useParams();
