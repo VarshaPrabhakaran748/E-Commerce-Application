@@ -22,8 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9i_b=p+yz$&91rs#9u_c*+*%11vu#se3dmf%0@&-tr30ni!0(u'
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -66,7 +65,10 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
 ]
 
-CORS_ALLOW_ALL_ORIGINS=True
+CORS_ALLOW_ALL_ORIGINS= False
+CORS_ALLOWED_ORIGINS=[
+    "https://e-commerce-application-khaki.vercel.app/",
+]
 
 STATIC_URL = '/static/'
 STATIC_ROOT = r'C:\Users\ELCOT\Downloads\Major-Project-1-20250530T092904Z-1-001\Major-Project-1\backend\ecommerce\project\staticfiles'
