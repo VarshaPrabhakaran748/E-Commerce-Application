@@ -67,11 +67,11 @@ MIDDLEWARE = [
 
 CORS_ALLOW_ALL_ORIGINS= False
 CORS_ALLOWED_ORIGINS=[
-    "https://e-commerce-application-khaki.vercel.app/",
+    "https://e-commerce-application-khaki.vercel.app",
 ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = r'C:\Users\ELCOT\Downloads\Major-Project-1-20250530T092904Z-1-001\Major-Project-1\backend\ecommerce\project\staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'project.urls'
